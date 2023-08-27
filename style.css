@@ -44,6 +44,7 @@ body{
 
 .btn:hover {
   box-shadow: 0 0 20px 0px #2e2e2e3a;
+  cursor: pointer;
 }
 
 .btn .icon {
@@ -80,6 +81,8 @@ body{
 .icon-img{
   color: #fff;
 }
+
+
 /* Blob */
 .blob {
     position: absolute;
@@ -121,6 +124,7 @@ body{
     background: #CF1130;
     background: repeating-linear-gradient(to right, #CF1130 0%, #30FF4C 27%, #8293FF 74%, #CFC91D 100%);
     font-size: 5.5rem;
+    color: #1a1a1a;
 }
 .main-title-1{
     font-family: 'Rubik', sans-serif;
@@ -135,6 +139,9 @@ body{
 .main-title-3{
     font-family: 'Rubik Mono One', sans-serif;
     font-weight: 900;
+}
+.main-titles:hover .main-title-3{
+  color: #fff;
 }
 
 /* Tagline */
@@ -201,12 +208,12 @@ body{
     padding: 10px;
     transition: height 1s;
 }
-.general-icon-img:hover{
-    height: 130px;
-    border-radius: 20px;
-    background: #1a1a1a;
-    box-shadow:  13px 13px 26px #0a0a0a,
-             -13px -13px 26px #2a2a2a;
+.general-section:hover .general-icon-img{
+  height: 130px;
+  border-radius: 20px;
+  background: #1a1a1a;
+  box-shadow:  13px 13px 26px #0a0a0a,
+           -13px -13px 26px #2a2a2a;
 }
 
 /* Our Need */
