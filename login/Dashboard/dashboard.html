@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS\dashboard.css">
+    <link rel="stylesheet" href="../universal button/universal_button.css">
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Location CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+    <title>Agent Dashboard</title>
+</head>
+<body>
+    <div class="sidebar close">
+        <div class="logo-details">
+          <img src="../../images/logos/logo-white.png" alt="" class="logo">
+          <!-- <span class="logo_name">DADA-CON</span> -->
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="#">
+              <i class='bx bx-grid-alt' ></i>
+              <span class="link_name">Dashboard</span>
+            </a>
+            <ul class="sub-menu blank">
+              <li><a class="link_name" href="#">Emergency</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="iocn-link">
+              <a href="#">
+                <i class='bx bx-collection' ></i>
+                <span class="link_name">Emergency</span>
+              </a>
+              <i class='bx bxs-chevron-down arrow' ></i>
+            </div>
+            <ul class="sub-menu">
+              <li><a class="link_name" href="#">Emergency</a></li>
+              <li><a href="#">Panic Mode</a></li>
+              <li><a href="#">Police Siren</a></li>
+              <li><a href="#">Ambulance Siren</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-pie-chart-alt-2' ></i>
+              <span class="link_name">Gadgets</span>
+            </a>
+            <ul class="sub-menu blank">
+              <li><a class="link_name" href="#">Gadgets</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-pie-chart-alt-2' ></i>
+              <span class="link_name">Profile</span>
+            </a>
+            <ul class="sub-menu blank">
+              <li><a class="link_name" href="#">Profile</a></li>
+            </ul>
+          </li>
+      </li>
+    </ul>
+      </div>
+
+<!-- Universal Buttons -->
+    <button class="stealth-btn">
+      <p><a href="../Skilled-E-Learning/index.html">Stealth</a></p>
+    </button>
+
+
+<!-- Home section -->
+      <section class="home-section">
+        <div class="home-content">
+          <i class='bx bx-menu' ></i>
+          <span class="text">Agent Dashboard</span>
+        </div>
+
+        <section class="missions">
+            <section class="type-missions">
+                <!-- active Missions -->
+                <h1 class="section-title">Active Missions</h1>
+                <div class="grid lg:grid-cols-2 lg:gap-10">
+                    <div class="mission-brief">
+                        <h1>Operation Shadowfall</h1>
+                        <p><strong>Brief: </strong>Infiltrate a high-security facility to retrieve classified documents.</p>
+
+                        <p><strong>Objective: </strong>Extract sensitive data from the target's main server room.</p>
+
+                        <p><strong>Status: </strong>In Progress</p>
+
+                        <p><strong>Deadline: </strong>5 Days</p>
+                    </div>
+                    <div class="mission-brief">
+                        <h1>Operation Silent Phoenix</h1>
+                        <p><strong>Brief: </strong>Attend a diplomatic event and discreetly gather intelligence.</p>
+
+                        <p><strong>Objective: </strong>Intercept conversations among high-profile attendees.</p>
+
+                        <p><strong>Status: </strong>Active</p>
+
+                        <p><strong>Deadline: </strong>2 Days</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="type-missions">
+                <!-- Upcoming missions -->
+                <h1 class="section-title">Upcoming Missions</h1>
+                <div class="grid lg:grid-cols-2 lg:gap-10">
+                    <div class="mission-brief">
+                        <h1>Operation Deep Cover</h1>
+                        <p><strong>Brief: </strong>Infiltrate an underground criminal network for data extraction.</p>
+
+                        <p><strong>Objective: </strong>Identify key members and their connections.</p>
+
+                        <p><strong>Status: </strong>Upcoming</p>
+
+                        <p><strong>Scheduled: </strong>1 week from today</p>
+                    </div>
+                    <div class="mission-brief">
+                        <h1>Operation Ghost Protocol</h1>
+                        <p><strong>Brief: </strong>Track and neutralize a rogue agent turned double-crosser.</p>
+
+                        <p><strong>Objective: </strong>Capture or eliminate the rogue agent, recover stolen data.</p>
+
+                        <p><strong>Status: </strong>Upcoming</p>
+
+                        <p><strong>Scheduled: </strong>10 days from today</p>
+                    </div>
+                </div>
+            </section>
+            
+        </section>
+
+<!-- Live Location -->
+        <section class="location">
+            <h1 class="section-title">Location</h1>
+            <div id="map"></div>
+        </section>
+
+
+
+
+
+
+<!-- Include content up -->
+      </section>
+
+
+
+    <!-- Javascript Files -->
+    <script src="JS\dashboard.js"></script>
+    <script src="JS/location.js"></script>
+</body>
+</html>

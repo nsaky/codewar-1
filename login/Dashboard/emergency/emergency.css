@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #fff;
+}
+.dark-section{
+    background-color: #01272c;
+    text-align: center;
+}
+.dark-btn{
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #01272c;
+    box-shadow:  15px 15px 30px #01171a,
+             -15px -15px 30px #01373e;
+}
