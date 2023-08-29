@@ -186,11 +186,13 @@ i {
   height: 140px;
   justify-content: center;
   overflow: hidden;
+  object-fit: contain;
 }
 
-.card-image > i {
-  font-size: 6em;
-  opacity: 0.25;
+.card-image > img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 .card-info-wrapper {
