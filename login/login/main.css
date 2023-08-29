@@ -46,23 +46,13 @@
 
 .back-grad {
   height: 100vh;
-  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
 }
 
-.back-grad::before {
-  position: absolute;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
-  background-color: #121212;
-  background-attachment: fixed;
-  content: "";
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  transition: 0.4s;
-  position: fixed;
-}
+
 
 .user-home {
   height: 60%;
@@ -149,12 +139,19 @@ h3.section-title {
   overflow: hidden;
 }
 
-.login-form {
-  width: 100%;
+.main-form {
+  flex-grow: 1;
 }
 
 .hey-c {
   position: relative;
+  flex-grow: 1;
+}
+
+.circle-container{
+  height: 100%;
+  flex-grow: 1;
+  
 }
 
 .hey {
@@ -195,14 +192,14 @@ input[type="submit"]:hover {
   color: crimson;
 }
 
-input[type="text"]:focus-within,
+/* input[type="text"]:focus-within,
 input[type="password"]:focus-within,
 input[type="email"]:focus-within,
 textarea:focus-within {
   border: transparent solid 2px;
   border-bottom-color: var(--secondary-color);
   width: 90%;
-}
+} */
 
 .img-bg-left {
   background-image: url(lib/back.jpg);
@@ -324,3 +321,6 @@ textarea:focus-within {
 #error {
   color: red;
 }
+
+
+

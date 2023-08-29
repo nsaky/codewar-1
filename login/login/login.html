@@ -1,57 +1,49 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    />
     <link href="main.css" type="text/css" rel="stylesheet" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Cabin&family=Great+Vibes&family=Open+Sans:wght@300&family=Poiret+One&family=Poppins:wght@200&family=Public+Sans:wght@300&family=Raleway:wght@200&display=swap"
       rel="stylesheet"
-    />
+    /> -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <title>Login</title>
   </head>
   <body>
     <div class="back-grad" id="home">
-      <div class="row">
+      <div class="main-form">
+        <h1 class="section-title">Login</h1>
+        <form>
+          <input
+            id="username"
+            placeholder="Email Id"
+            name="username"
+            type="email"
+          /><br />
+          <input
+            id="password"
+            placeholder="Password"
+            name="password"
+            type="password"
+          /><br /><br />
+          <br />
+          <p id="error"></p>
+          <input
+            id="submitb"
+            class="button"
+            type="submit"
+            value="Sign in"
+          /><br /><br />
+        </form>
+      </div>
+
+      <div class="circle-container">
         <div
-          class="col-md-6 login d-flex align-items-center justify-content-center"
-        >
-          <div class="login-form">
-            <h1 class="section-title">Login</h1>
-            <form>
-              <input
-                id="username"
-                placeholder="Email Id"
-                name="username"
-                type="email"
-              /><br />
-              <input
-                id="password"
-                placeholder="Password"
-                name="password"
-                type="password"
-              /><br /><br />
-              <br />
-              <p id="error"></p>
-              <input
-              id="submitb"
-              class="button"
-              type="submit"
-              value="Sign in"
-              /><br><br>
-            </form>
-          </div>
-        </div>
-        <div
-          class="col-md-6 d-flex align-items-center justify-content-center hey-c"
+          class="circlediv hey-c"
         >
           <div class="okay-i-pull-up"></div>
           <div class="hey"></div>
