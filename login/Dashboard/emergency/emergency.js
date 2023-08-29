@@ -27,3 +27,8 @@ let pistolSound = () => new Audio("Sounds/violent/pistol.mp3").play()
 
 //Rifle
 let rifleSound = () => new Audio("Sounds/violent/rifle.mp3").play()
+
+// Reload JS
+function stopSounds(){
+    window.location.reload();
+} 

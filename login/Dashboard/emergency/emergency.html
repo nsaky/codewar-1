@@ -5,25 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency Tools</title>
     <link rel="stylesheet" href="emergency.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="../../universal button/universal_button.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <h1>Emergency Tools</h1>
 
-    <section class="panic dark-section">
-        <button class="dark-btn" onclick="dangerSound()">Danger(10s)</button>
-        <button class="dark-btn" onclick="ambulanceSound()">Ambulance</button>
-        <button class="dark-btn" onclick="policeSound()">Police</button>
-        <button class="dark-btn" onclick="doorBellSound()">Door Bell</button>
-        <button class="dark-btn" onclick="faucetSound()">Faucet Running</button>
-        <button class="dark-btn" onclick="keyboardSound()">Keyboard Typing</button>
-        <button class="dark-btn" onclick="glassSound()">Glass Breaking</button>
-        <button class="dark-btn" onclick="explosionSound()">Explosion</button>
-        <button class="dark-btn" onclick="pistolSound()">Pistol Firing</button>
-        <button class="dark-btn" onclick="rifleSound()">RIffle Firing</button>
+    <section class="sounds">
+        <div>
+            <h1 class="title">Audio Distraction Toolkit</h1>
+        </div>
 
+        <div class="grid md:grid-cols-3 gap-10 cards-sounds">
+            <div class="card">
+              <div class="card-content">
+                <h1>Danger Siren</h1>
+                <button class="sound-btn" onclick="dangerSound()">Play
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                  <h1>Ambulance Siren</h1>
+                  <button class="sound-btn" onclick="ambulanceSound()"> Play
+                  </button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-content">
+                  <h1>Police Siren</h1>
+                  <button class="sound-btn" onclick="policeSound()"> Play
+                  </button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-content">
+                  <h1>Doorbell</h1>
+                  <button class="sound-btn" onclick="doorBellSound()"> Play
+                  </button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-content">
+                  <h1>Running Faucet</h1>
+                  <button class="sound-btn" onclick="faucetSound()"> Play
+                  </button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-content">
+                  <h1>Keyboard Typing</h1>
+                  <button class="sound-btn" onclick="keyboardSound()"> Play
+                  </button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-content">
+                  <h1>Glass Breaking</h1>
+                  <button class="sound-btn" onclick="glassSound()"> Play
+                  </button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-content">
+                  <h1>Explosion</h1>
+                  <button class="sound-btn" onclick="explosionSound()"> Play
+                  </button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-content">
+                  <h1>Pistol Firing</h1>
+                  <button class="sound-btn" onclick="pistolSound()"> Play
+                  </button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-content">
+                  <h1>Rifle Firing</h1>
+                  <button class="sound-btn" onclick="rifleSound()"> Play
+                  </button>
+                </div>
+              </div>
+        </div>
     </section>
+
+    <button class="reload-btn" onClick="stopSounds()">Stop All Sounds</button>
+
+    <a href="../dashboard.html">
+        <button class="db-btn">
+        
+            <span class="texts">Dashboard</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="arrow icon icon-tabler icon-tabler-layout-dashboard" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M4 4h6v8h-6z" /> <path d="M4 16h6v4h-6z" /> <path d="M14 12h6v8h-6z" /> <path d="M14 4h6v4h-6z" /> </svg>
+        </button>
+    </a>
+
+    <button class="stealth-btn">
+        <p><a href="../../Skilled-E-Learning/index.html">Stealth</a></p>
+    </button>
+    
 
     <script src="emergency.js"></script>
 </body>

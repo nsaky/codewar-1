@@ -6,29 +6,215 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #fff;
+    background-color: #000;
 }
-.dark-section{
-    background-color: #01272c;
-    text-align: center;
-}
-.dark-btn{
+
+.sounds{
+    width: 80vw;
     margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    width: 250px;
-    height: 250px;
-    border: 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border-radius: 50%;
-    background: #01272c;
-    box-shadow:  23px 23px 46px #011e22,
-                 -23px -23px 46px #013036;
+}
+
+.cards-sounds{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.title{
     color: #fff;
-    font-family: 'Sulphur Point', sans-serif;
-    font-size: 30px;
+    font-family: 'Iceland', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 4.5em;
+}
+.sound-btn {
+ padding: 17px 40px;
+ border-radius: 10px;
+ border: 0;
+ background-color: rgb(255, 56, 86);
+ letter-spacing: 1.5px;
+ font-size: 15px;
+ transition: all .3s ease;
+ box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+ color: hsl(0, 0%, 100%);
+}
+
+.sound-btn:hover {
+ box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+}
+
+.sound-btn:active {
+ background-color: rgb(255, 56, 86);
+ /*50, 168, 80*/
+ box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+ transform: translateY(5px);
+ transition: 200ms;
+}
+
+/* CARD */
+:root {
+  --primary-color: mediumslateblue;
+}
+
+.mission-details{
+  text-align: left;
+  line-height: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 7em;
+}
+
+h1, h2, h3, p {
+  margin: 0rem;
+}
+
+
+.card {
+  width: 25vw;
+  position: relative;
+  background-color: rgb(16 16 16);
+  border: 1px solid rgb(255 255 255 / 5%);
+  border-radius: 1.5rem;
+  padding: 1rem;
+}
+
+.card:after {  
+  content: "";
+  height: 70px;
+  width: 1px;  
+  position: absolute;  
+  left: -1px;
+  top: 65%;
+  transition: top, opacity;
+  transition-duration: 600ms;
+  transition-timing-function: ease;
+  background: linear-gradient(
+    transparent,
+    var(--primary-color),
+    transparent
+  );
+  opacity: 0;
+}
+
+.card:after {  
+  top: 65%;
+  opacity: 0;
+}
+
+.card:hover:after {
+  top: 25%;
+  opacity: 1;
+}
+
+.card-content {  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 1px, 
+    transparent 1px
+  );
+  background-position: 50% 50%;
+  background-size: 1.1rem 1.1rem;
+  padding: 2rem;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.card-content > :is(h1, h3, p) {
+  text-align: center;
+}
+
+.card-content >  h1 {
+  color: rgb(250 249 246); 
+  font-size: 1.5rem;
+}
+
+.card-content > .mission-details> h3 {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-size: 0.76rem;
+}
+
+.card-content > .mission-details> span >h3 {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-size: 0.76rem;
+}
+
+.card-content > .mission-details> p {
+  color: rgb(255 255 255 / 75%);
+  line-height: 1.5rem;
+}
+
+
+@media(max-width: 700px) {
+  .card {
+    width: calc(100% - 2rem);
+    margin: 0rem 1rem;
+    padding: 0.75rem;
+    border-radius: 1rem;
+  }
+}
+
+@media(max-width: 600px) {
+  .card-content {
+    padding: 3rem;
+  }
+  
+  .card-content > h1 {
+    font-size: 2.2rem;
+  }
+}
+
+i{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* reload button */
+.reload-btn {
+ width: 100px;
+ height: 3.3em;
+ margin: 0.5em;
+ background: black;
+ color: white;
+ border: none;
+ border-radius: 0.625em;
+ font-size: 20px;
+ font-weight: bold;
+ cursor: pointer;
+ position: relative;
+ z-index: 1;
+ overflow: hidden;
+ position: fixed;
+ right: 0;
+ bottom: 0;
+ margin-right: 15px;
+ margin-bottom: 80px;
+}
+
+.reload-btn:hover {
+ color: black;
+}
+
+.reload-btn:after {
+ content: "";
+ background: white;
+ position: absolute;
+ z-index: -1;
+ left: -20%;
+ right: -20%;
+ top: 0;
+ bottom: 0;
+ transform: skewX(-45deg) scale(0, 1);
+ transition: all 0.5s;
+}
+
+.reload-btn:hover:after {
+ transform: skewX(-45deg) scale(1, 1);
+ -webkit-transition: all 0.5s;
+ transition: all 0.5s;
 }
