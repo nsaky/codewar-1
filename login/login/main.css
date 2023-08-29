@@ -141,17 +141,16 @@ h3.section-title {
 
 .main-form {
   flex-grow: 1;
+  padding-left: 3em;
 }
 
 .hey-c {
   position: relative;
-  flex-grow: 1;
+  
 }
 
 .circle-container{
-  height: 100%;
   flex-grow: 1;
-  
 }
 
 .hey {
@@ -220,6 +219,7 @@ textarea:focus-within {
   width: 20vh;
   border-radius: 100%;
   background-color: crimson;
+  margin: auto;
 }
 
 .jai-madhu {

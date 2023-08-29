@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secret Agent Marketplace</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="left">
+      <h1>Secret Agent Marketplace</h1>
+      <div class="category-buttons">
+        <button class="category-button active" data-category="all">All</button>
+        <button class="category-button" data-category="weapons">Weapons</button>
+        <button class="category-button" data-category="distractions">
+          Distractions
+        </button>
+        <button class="category-button" data-category="sensors">Sensors</button>
+        <button class="category-button" data-category="explosives">
+          Explosives
+        </button>
+      </div>
+
+      <div class="cards" id="cards">
+        <!-- Items will be dynamically added here -->
+      </div>
+    </div>
+    <div class="inventory right">
+      <h2>Your Inventory</h2>
+      <div id="inventory-list">
+        <!-- Inventory items will be dynamically added here -->
+      </div>
+    </div>
+
+    <script>
+      let selectedItems = {};
+      const itemsArray = [
+        {
+          name: "Silenced Pistol",
+          category: "weapons",
+          description: "A compact pistol with a suppressor.",
+          price: 200,
+        },
+        {
+          name: "Sniper Rifle",
+          category: "weapons",
+          description: "High-precision rifle for long-range engagements.",
+          price: 500,
+        },
+        {
+          name: "Smoke Grenade",
+          category: "distractions",
+          description: "Emits thick smoke to obscure vision.",
+          price: 50,
+        },
+        {
+          name: "Flashbang",
+          category: "distractions",
+          description: "Disorients enemies with a blinding flash.",
+          price: 75,
+        },
+        {
+          name: "Motion Detector",
+          category: "sensors",
+          description: "Detects movement within a designated area.",
+          price: 150,
+        },
+        {
+          name: "Thermal Goggles",
+          category: "sensors",
+          description: "Reveals heat signatures in darkness.",
+          price: 300,
+        },
+        {
+          name: "C4 Explosive",
+          category: "explosives",
+          description: "Powerful explosive for controlled demolitions.",
+          price: 300,
+        },
+        {
+          name: "EMP Device",
+          category: "explosives",
+          description: "Disables electronic devices in a radius.",
+          price: 250,
+        },
+        // Add more items as needed
+      ];
+
+      let activeButton = "all";
+      const marketplace = document.getElementById("cards");
+      const inventoryList = document.getElementById("inventory-list");
+      const categoryButtons = document.querySelectorAll(".category-button");
+
+      function createItemElement(item) {
+        const itemElement = document.createElement("div");
+        itemElement.classList.add("card");
+        itemElement.classList.add("item");
+        itemElement.classList.add("add-to-inventory");
+        itemElement.dataset.category = item.category;
+        itemElement.dataset.item = item.name;
+        itemElement.dataset.price = item.price;
+        itemElement.innerHTML = `
+      <div class="card-content">
+        <div class="card-image">
+          <i class="fa-duotone fa-apartment"></i>
+        </div>
+        <div class="card-info-wrapper">
+          <div class="card-info">
+            <i class="fa-duotone fa-apartment"></i>
+            <div class="card-info-title">
+              <h3>${item.name}</h3>
+              <h4>${item.description}</h4>
+            </div>
+          </div>
+        </div>
+      </div>`;
+        return itemElement;
+      }
+
+      function addToMarketplace(item) {
+        const itemElement = createItemElement(item);
+        marketplace.appendChild(itemElement);
+      }
+
+      itemsArray.forEach((item) => {
+        addToMarketplace(item);
+      });
+
+      categoryButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const category = button.getAttribute("data-category");
+          console.log(category);
+          if (category === "all") {
+            marketplace.querySelectorAll(".item").forEach((item) => {
+              item.style.display = "block";
+            });
+          } else {
+            marketplace.querySelectorAll(".item").forEach((item) => {
+              item.style.display =
+                item.dataset.category === category ? "block" : "none";
+            });
+          }
+          let idk = document.querySelectorAll(".active");
+          console.log(idk);
+          idk.forEach((resetbutton) => {
+            resetbutton.classList.remove("active");
+          });
+          activeButton = category;
+          button.classList.add("active");
+        });
+      });
+
+      const addToInventoryButtons =
+        document.querySelectorAll(".add-to-inventory");
+
+      addToInventoryButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const itemName = button.getAttribute("data-item");
+          const itemPrice = parseFloat(button.getAttribute("data-price"));
+          if (button.getAttribute("data-item") in selectedItems == false) {
+            selectedItems[button.getAttribute("data-item")] = [
+              1,
+              button.getAttribute("data-price"),
+            ];
+          } else {
+            selectedItems[button.getAttribute("data-item")][0] += 1;
+          }
+          let newlist = [];
+          Object.keys(selectedItems).forEach((item) => {
+            const inventoryItem = document.createElement("div");
+            inventoryItem.classList.add("item-card");
+            inventoryItem.innerHTML = `
+            <div>
+              <div>${item}</div> 
+              <div>$${selectedItems[item][1]}</div>
+              </div>
+              <div>
+                ${selectedItems[item][0]}
+                </div>
+            `;
+
+            newlist.push(inventoryItem);
+          });
+          inventoryList.replaceChildren(...newlist);
+        });
+      });
+
+      document.getElementById("cards").onmousemove = (e) => {
+        for (const card of document.getElementsByClassName("card")) {
+          const rect = card.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+
+          card.style.setProperty("--mouse-x", `${x}px`);
+          card.style.setProperty("--mouse-y", `${y}px`);
+        }
+      };
+    </script>
+  </body>
+</html>
