@@ -5,47 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
     <link rel="stylesheet" href="profile.css" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-    <!-- tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../universal button/universal_button.css">
     <title>Agent Profile</title>
 
 </head>
 <body>
-    <section class="profile">
-        <div>
-            <img src="../../../images/agentperry.jpg" alt="">
-            <h1>Agent Perry</h1>
-        </div>
 
-        <div>
-            <h2>Real Name</h2>
-            <p>Amelia Torres</p>
+<!-- CARD -->
+    <section>
+        <div class="container">
+            <div class="card-details">
+                <div>
+                    <div class="name-number">
+                        <div class="Detail">
+                            <h6>Agent Number</h6>
+                            <h5 class="number">8050 5D4F 2X80 3S2J</h5>
+                        </div>
+                        <div class="Detail">
+                            <h6>Real Name</h6>
+                            <h5 class="number">Amelia Torres</h5>
+                        </div>
+                        <div class="Detail">
+                            <h6>Rank</h6>
+                            <h5 class="number">Senior Agent</h5>
+                        </div>
+                        <div class="Detail">
+                            <h6>Contact</h6>
+                            <h5 class="number">agentperry@dadacon.com</h5>
+                        </div>
+                        <div class="Detail">
+                            <h6>Phone Number</h6>
+                            <h5 class="number">+1 (555) 123-4567</h5>
+                        </div>
+                        <h5 class="name">Agent Perry</h5>
+                    </div>
+                </div>
+                <div class="images">
+                    <div>
+                        <img src="../../../images/agentperry.jpg" alt="" class="chip" />  
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div>
-            <h2>Rank</h2>
-            <p>Senior Agent</p>
-        </div>
-
-        <div>
-            <h2>Division</h2>
-            <p>Covert Intelligence Division</p>
-        </div>
-
-        <div>
-            <h2>Contact</h2>
-            <p>agentperry@dadacon.com</p>
-        </div>
-
-        <div>
-            <h2>Phone</h2>
-            <p>+1 (555) 123-4567</p>
-        </div>
-        
-        
     </section>
     
+    <a href="../dashboard.html">
+        <button class="db-btn">
+            <span class="texts">Dashboard</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="arrow icon icon-tabler icon-tabler-layout-dashboard" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M4 4h6v8h-6z" /> <path d="M4 16h6v4h-6z" /> <path d="M14 12h6v8h-6z" /> <path d="M14 4h6v4h-6z" /> </svg>
+        </button>
+    </a>
+
+    <button class="stealth-btn">
+        <p><a href="../../Skilled-E-Learning/index.html">Stealth</a></p>
+    </button>
+
 </body>
 </html>

@@ -13,7 +13,7 @@
  z-index: 2;
  margin-bottom: 10px;
  margin-right: 10px;
- border-radius: 10px;
+ text-decoration: none;
 }
 
 .stealth-btn p {
@@ -60,3 +60,55 @@
  height: 80%;
 }
 
+
+
+/* Dashboard Button */
+.db-btn {
+  width: 180px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  border: 3px solid rgb(255, 239, 94);
+  background-color: rgb(255, 239, 94);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.137);
+  position: fixed;
+  top:0;
+  left: 0;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.texts {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(27, 27, 27);
+  color: white;
+  border-radius: 5px;
+}
+
+.db-btn:hover .arrow {
+  animation: slide-in-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-8px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.db-btn:active {
+  transform: scale(0.97);
+}

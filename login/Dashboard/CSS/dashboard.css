@@ -1,5 +1,6 @@
 /* Google Fonts Import Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Iceland&family=Poiret+One&family=Poppins:ital,wght@0,400;0,800;0,900;1,400;1,800;1,900&family=Raleway:ital,wght@0,400;0,800;0,900;1,400;1,800&family=Sulphur+Point:wght@400;700&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -10,6 +11,7 @@
     height: 50px;
     margin-top: 15px;
     margin-left: 15px;
+    background-color: #000;
 }
 .sidebar{
   position: fixed;
@@ -17,9 +19,10 @@
   left: 0;
   height: 100%;
   width: 260px;
-  background: #11101d;
+  background: #000;
   z-index: 100;
   transition: all 0.5s ease;
+  border-right: 0.1px solid red;
 }
 .sidebar.close{
   width: 78px;
@@ -166,14 +169,14 @@
   transform: translateY(-50%);
 }
 
-
+/* Home Section */
 .home-section{
   position: relative;
-  background: #E4E9F7;
-  height: 100vh;
   left: 260px;
   width: calc(100% - 260px);
   transition: all 0.5s ease;
+  background-color: #000;
+  padding-bottom: 50px;
 }
 .sidebar.close ~ .home-section{
   left: 78px;
@@ -186,7 +189,7 @@
 }
 .home-section .home-content .bx-menu,
 .home-section .home-content .text{
-  color: #11101d;
+  color: #fff;
   font-size: 35px;
 }
 .home-section .home-content .bx-menu{
@@ -221,7 +224,14 @@
 /* Section Stylings */
 .section-title{
     font-size: 30px;
-    font-weight: bolder;
+    color: #fff;
+    margin-top: 20px;
+    font-family: 'Raleway', sans-serif;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+.company-title{
+  font-family: 'Iceland', cursive;
 }
 
 /* Missions */
@@ -230,7 +240,7 @@
     margin-right: 30px;
 }
 .mission-brief{
-    background-color: #11101d;
+    background-color: #000;
     color: #fff;
     padding: 20px;
     margin-top: 10px;
@@ -247,15 +257,143 @@
     margin-bottom: 50px;
 }
 
+.type-missions h1{
+  font-weight: 400;
+}
+.upcoming-contracts .card{
+  width: 28vw;
+}
 
 /* Location */
 .location{
-    background-color: #fff;
+    background-color: #000;
     z-index: 1;
+    margin-right: 30px;
+    margin-left: 30px;
 }
 #map{
   z-index: 1;
     height: 350px;
-    width: 80vw;
+    width: 85vw;
     margin: auto;
+}
+
+
+/* Cards */
+
+:root {
+  --primary-color: mediumslateblue;
+}
+
+.mission-details{
+  text-align: left;
+  line-height: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 7em;
+}
+
+h1, h2, h3, p {
+  margin: 0rem;
+}
+
+.card {
+  width: 550px;
+  position: relative;
+  background-color: rgb(16 16 16);
+  border: 1px solid rgb(255 255 255 / 5%);
+  border-radius: 1.5rem;
+  padding: 1rem;
+}
+
+.card:after {  
+  content: "";
+  height: 70px;
+  width: 1px;  
+  position: absolute;  
+  left: -1px;
+  top: 65%;
+  transition: top, opacity;
+  transition-duration: 600ms;
+  transition-timing-function: ease;
+  background: linear-gradient(
+    transparent,
+    var(--primary-color),
+    transparent
+  );
+  opacity: 0;
+}
+
+.card:after {  
+  top: 65%;
+  opacity: 0;
+}
+
+.card:hover:after {
+  top: 25%;
+  opacity: 1;
+}
+
+.card-content {  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 1px, 
+    transparent 1px
+  );
+  background-position: 50% 50%;
+  background-size: 1.1rem 1.1rem;
+  padding: 2rem;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.card-content > :is(h1, h3, p) {
+  text-align: center;
+}
+
+.card-content >  h1 {
+  color: rgb(250 249 246); 
+  font-size: 1.5rem;
+}
+
+.card-content > .mission-details> h3 {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-size: 0.76rem;
+}
+
+.card-content > .mission-details> span >h3 {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-size: 0.76rem;
+}
+
+.card-content > .mission-details> p {
+  color: rgb(255 255 255 / 75%);
+  line-height: 1.5rem;
+}
+
+
+@media(max-width: 700px) {
+  .card {
+    width: calc(100% - 2rem);
+    margin: 0rem 1rem;
+    padding: 0.75rem;
+    border-radius: 1rem;
+  }
+}
+
+@media(max-width: 600px) {
+  .card-content {
+    padding: 3rem;
+  }
+  
+  .card-content > h1 {
+    font-size: 2.2rem;
+  }
 }
